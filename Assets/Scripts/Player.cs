@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
 
                 // 위쪽으로 힘을 가해 점프시킵니다.
                 rigidBody.AddForce(Vector2.up * this.jumpForce, ForceMode2D.Impulse);
-                
+
                 // 뛰었으니 바로 공중 상태가 됩니다.
-                isGrounded = false; 
+                isGrounded = false;
             }
         }
 
