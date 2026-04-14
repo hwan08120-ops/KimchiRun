@@ -11,10 +11,12 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
 
     private Rigidbody2D rigidBody;
+    private Animator animator;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -31,6 +33,9 @@ public class Player : MonoBehaviour
 
                 // 위쪽으로 힘을 가해 점프시킵니다.
                 rigidBody.AddForce(Vector2.up * this.jumpForce, ForceMode2D.Impulse);
+
+                // 스페이스바를 눌러 점프할 때 애니메이터(Animator) 파라미터의 state 값을 1로 변경합니다.
+                animator.SetInteger("state", 1);
 
                 // 뛰었으니 바로 공중 상태가 됩니다.
                 isGrounded = false;
@@ -53,6 +58,9 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+
+            // 바닥에 닿았을 때(착지) 애니메이터(Animator) 파라미터의 state 값을 2로 변경합니다.
+            animator.SetInteger("state", 2);
         }
     }
 
