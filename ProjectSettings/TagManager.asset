@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - SomeThing
+  - Enemy
+  - Food
+  - Gold
   layers:
   - Default
   - TransparentFX

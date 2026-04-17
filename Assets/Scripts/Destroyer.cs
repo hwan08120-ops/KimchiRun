@@ -5,6 +5,8 @@ public class Destroyer : MonoBehaviour
     private Camera mainCamera;
     private SpriteRenderer spriteRenderer;
 
+    private Transform f;
+
     void Start()
     {
         mainCamera = Camera.main;
