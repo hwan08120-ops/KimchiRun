@@ -4,7 +4,7 @@ using UnityEngine.InputSystem; // 새로운 Input System 추가
 [RequireComponent(typeof(MeshRenderer))]
 public class BackgroundScroll : MonoBehaviour
 {
-    public float scrollSpeed = 1.5f; // 기본 스크롤 속도
+    public float scrollSpeed = 2.5f; // 기본 스크롤 속도
     public float sprintMultiplier = 2f; // 쉬프트 달리기 속도 배수
     
     private MeshRenderer meshRenderer;

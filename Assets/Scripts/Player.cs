@@ -17,9 +17,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private Animator animator;
-    private Collider2D collider2D;
+    private new Collider2D collider2D;
 
-    public int lives = 3;
     public bool isInvincible = false;
 
     private void Start()
@@ -126,19 +125,17 @@ public class Player : MonoBehaviour
 
     private void Heal()
     {
-        lives = Mathf.Min(lives + 1, 3);
-        Debug.Log("Player lives : " + lives);
+        GameManager.Instance.AddLive();
     }
 
     private void Damage()
     {
-        lives--;
-        if (lives <= 0)
+        GameManager.Instance.RemoveLive();
+        if (GameManager.Instance.Lives <= 0)
         {
             Debug.Log("Game Over");
             KillPlayer();
         }
-        Debug.Log("Player lives : " + lives);
     }
 
     private void StartInvincible()

@@ -3,8 +3,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("스폰 시간 설정")]
-    public float minSpawnTime = 1.0f;
-    public float maxSpawnTime = 3.0f;
+    public float minSpawnTime = 0.6f;
+    public float maxSpawnTime = 1.8f;
 
     [Header("생성할 건물")]
     public GameObject[] buildingPrefabs;
@@ -17,11 +17,6 @@ public class Spawner : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
-    }
-
-    void Start()
-    {
-        MakeInstance();
     }
 
     void Spawn()
